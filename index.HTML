@@ -1,0 +1,46 @@
+<html>
+    <body>
+        <title>SKM Search Engine</title>
+        <link rel="stylesheet" href="styles.css">
+<center><img src="LOGO.png"></center>
+        <br>
+     <center>   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<ul id="myUL">
+  <li><a href="apple.html">Apple</a></li>
+  <li><a href="#">App</a></li>
+
+  <li><a href="#">Best Friend</a></li>
+  <li><a href="#">Macro vision Academy</a></li>
+
+  <li><a href="#">Samarendra Kumar Mitra</a></li>
+  <li><a href="#">Nacl</a></li>
+  <li><a href="#">All is well</a></li>
+  <li><a href="#">Taj Mahal</a></li>
+  <li><a href="#">Taj Mahal in Bhuranpur</a></li>
+  <li><a href="#">Websites</a></li>
+</ul></center>
+<script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('li');
+    
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+    </script>
+        
+    </body>
+</html>
